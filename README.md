@@ -1,10 +1,4 @@
 # Healthcare-Marketing-Analytics
-Được. Với project hiện tại của bạn, mình nghĩ README nên **kể được câu chuyện phân tích**, chứ không chỉ liệt kê "Python + SQL + Power BI". Vì đây là project portfolio để thể hiện tư duy Data Analyst, mình viết theo hướng **business-oriented** nhé.
-
-Bạn có thể copy toàn bộ phần dưới đây vào `README.md` trên GitHub.
-
-````markdown
-# 🏥 Healthcare Appointment No-Show Analysis
 
 ## 📌 Project Overview
 
