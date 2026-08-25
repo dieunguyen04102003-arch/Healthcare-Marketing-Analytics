@@ -53,27 +53,27 @@ I also created several new variables for the analysis:
 ## 3. Tools
 
 ### Python
+
 Used for:
 
 - Data cleaning
 - Data type conversion
 - Feature engineering
-- Exploratory Data Analysis
-- Initial data visualization
+- Exploratory Data Analysis (EDA)
 
-Libraries:
-`Pandas` `NumPy` `Matplotlib` `Seaborn`
+Main library:
+`Pandas`
 
 ### SQL
-Used to answer business questions and perform deeper analysis through:
+
+Used to answer business questions through:
 
 - Aggregation
+- Filtering and grouping
 - CASE WHEN
-- GROUP BY
-- CTE
+- CTEs
 - Window functions
-- Segmentation
-- Cross-analysis
+- Cross-analysis and segmentation
 
 ### Power BI
 Used to build the final dashboard and present the main findings.
