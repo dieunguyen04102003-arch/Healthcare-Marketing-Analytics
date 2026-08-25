@@ -226,6 +226,7 @@ The first page summarizes:
 * No-show rate by waiting time
 * No-show rate by age group
 * No-show rate by weekday
+<img width="1163" height="645" alt="image" src="https://github.com/user-attachments/assets/12416c76-c2e2-43cc-8b1a-0e98986cf0fe" />
 
 ### Page 2 — Targeted Reminder Strategy
 
@@ -236,6 +237,7 @@ The second page focuses on:
 * No-show rate among patients without SMS
 * High-risk patient groups
 * Reminder targeting opportunities
+<img width="1168" height="654" alt="image" src="https://github.com/user-attachments/assets/2c089897-50e5-4d85-bfbf-5f8fb5560584" />
 
 ---
 
