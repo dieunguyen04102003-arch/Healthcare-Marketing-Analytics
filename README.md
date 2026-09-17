@@ -2,25 +2,45 @@
 
 ## 1. About the project
 
-This project analyzes healthcare appointment data to understand why patients miss
-their appointments and identify patient groups that may need more attention.
+This project analyzes 110,527 healthcare appointment records to identify patterns associated with patient No-show behavior and determine patient segments with elevated No-show rates.
 
-The main focus of the analysis is:
+The project follows an end-to-end data analysis workflow using Python (Pandas) for data cleaning, preprocessing and feature engineering, SQL for cross-segment analysis, and Power BI for interactive dashboard development and visualization.
 
-- Overall No-show rate
-- Patient demographics
-- Waiting time
-- SMS reminders
-- Age groups
-- Appointment weekdays
-- Patient segments with higher No-show rates
+The analysis focuses on waiting time, patient demographics, SMS reminders, appointment weekdays, and patient segments associated with different No-show rates.
 
-The final goal is to find some practical insights that could help improve
-appointment reminder strategies.
-
+The final goal is to transform raw appointment data into structured analytical insights that could support more targeted appointment reminder strategies.
 ---
 
-## 2. Dataset
+## 2. Dashboard Preview
+
+### Page 1 — Executive Overview
+
+<img width="1163" height="645" alt="image" src="https://github.com/user-attachments/assets/12416c76-c2e2-43cc-8b1a-0e98986cf0fe" />
+
+The first page summarizes:
+
+* Total appointments
+* Show-up rate
+* No-show rate
+* SMS coverage
+* No-show rate by waiting time
+* No-show rate by age group
+* No-show rate by weekday
+
+### Page 2 — Targeted Reminder Strategy
+
+<img width="1168" height="654" alt="image" src="https://github.com/user-attachments/assets/2c089897-50e5-4d85-bfbf-5f8fb5560584" />
+
+The second page focuses on:
+
+* SMS coverage by waiting time
+* No-show rate by waiting time and SMS status
+* No-show rate among patients without SMS
+* High-risk patient groups
+* Reminder targeting opportunities
+
+---
+## 3. Dataset
 
 The dataset contains **110,527 medical appointments**.
 
@@ -40,7 +60,7 @@ Some of the main columns include:
 - SMS_received
 - No-show
 
-I also created several new variables for the analysis:
+Several analysis-ready features were created during preprocessing:
 
 - `Show_up`
 - `Age_Group`
@@ -50,56 +70,64 @@ I also created several new variables for the analysis:
 
 ---
 
-## 3. Tools
+## 4. Tools
 
-### Python
+### 4.1. Python
 
-Used for:
+Used for data cleaning, preprocessing, and feature engineering:
 
-- Data cleaning
-- Data type conversion
-- Feature engineering
-- Exploratory Data Analysis (EDA)
+- Reviewed dataset structure, completeness, and data types
+- Converted scheduling and appointment timestamps into appropriate datetime formats
+- Checked AppointmentID for duplicate records
+- Converted identifier fields into appropriate data types
+- Calculated appointment waiting time
+- Created analysis-ready features including Age_Group, Waiting_group, Appointment_Weekday, Show_up, and Conditions
+- Prepared and exported the processed dataset for further analysis
 
-Main library:
-`Pandas`
+Main library: Pandas
 
-### SQL
+### 4.2. SQL
 
-Used to answer business questions through:
+Used for analytical querying and cross-segment analysis:
 
-- Aggregation
-- Filtering and grouping
-- CASE WHEN
-- CTEs
-- Window functions
-- Cross-analysis and segmentation
+- Calculated Show-up and No-show rates
+- Compared No-show behavior across demographic and appointment characteristics
+- Analyzed waiting-time and SMS reminder patterns
+- Performed multi-dimensional segmentation across age, waiting time, and SMS status
+- Identified patient groups with elevated No-show rates
+- Used aggregations, CASE WHEN, window functions, and conditional calculations
 
-### Power BI
-Used to build the final dashboard and present the main findings.
+### 4.3. Power BI
+Used for interactive dashboard development and data visualization:
+
+- Created KPI cards for appointment volume, Show-up rate, No-show rate, and SMS coverage
+- Visualized No-show patterns across waiting time, age groups, and appointment weekdays
+- Compared SMS coverage and No-show rates across patient segments
+- Added interactive filters to support segment-level exploration
+- Summarized key findings and actionable insights within the dashboard
 
 ---
 
-## 4. Analysis Process
+## 5. Analysis Process
 
-```text
 Raw Data
    ↓
-Python
-Cleaning + EDA
+Python / Pandas
+Data Cleaning & Preprocessing
+   ↓
+Feature Engineering
    ↓
 SQL
-Business Questions
+Analysis & Segmentation
    ↓
 Power BI
-Dashboard
+Dashboard & Visualization
    ↓
-Insights & Recommendations
-````
+Findings & Recommendations
 
 ---
 
-## 5. Business Questions
+## 6. Analysis Questions
 
 Some of the main questions I explored:
 
@@ -117,7 +145,7 @@ Some of the main questions I explored:
 
 ---
 
-## 6. Key Findings
+## 7. Key Findings
 
 ### Overall attendance
 
@@ -187,59 +215,32 @@ This was one of the main findings used for the final dashboard.
 
 ---
 
-## 7. Recommendations
+## 8. Recommendations
 
 Based on the analysis, I would prioritize:
 
-### 1. Long-waiting appointments
+### 8.1. Long-waiting appointments
 
 Appointments with **15+ days of waiting time** should receive more attention
 because they have considerably higher No-show rates.
 
-### 2. Patients without SMS coverage
+### 8.2. Long-waiting appointments without SMS coverage
 
 Long-waiting appointments without SMS coverage are a particularly important
 group to consider for targeted reminders.
 
-### 3. Young Adults
+### 8.3. Young Adults
 
 Young Adults have the highest No-show rate among the age groups analyzed,
 so they could be considered for more targeted communication.
 
-### 4. Use multiple factors instead of gender alone
+### 8.4. Use multiple factors instead of gender alone
 
 The difference between male and female No-show rates is small.
 Waiting time, age and SMS coverage appear more useful for segmentation.
 
 ---
 
-## 8. Power BI Dashboard
-
-### Page 1 — Executive Overview
-
-The first page summarizes:
-
-* Total appointments
-* Show-up rate
-* No-show rate
-* SMS coverage
-* No-show rate by waiting time
-* No-show rate by age group
-* No-show rate by weekday
-<img width="1163" height="645" alt="image" src="https://github.com/user-attachments/assets/12416c76-c2e2-43cc-8b1a-0e98986cf0fe" />
-
-### Page 2 — Targeted Reminder Strategy
-
-The second page focuses on:
-
-* SMS coverage by waiting time
-* No-show rate by waiting time and SMS status
-* No-show rate among patients without SMS
-* High-risk patient groups
-* Reminder targeting opportunities
-<img width="1168" height="654" alt="image" src="https://github.com/user-attachments/assets/2c089897-50e5-4d85-bfbf-5f8fb5560584" />
-
----
 
 ## 9. Limitations
 
